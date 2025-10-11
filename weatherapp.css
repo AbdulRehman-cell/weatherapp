@@ -1,0 +1,101 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and Background */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #8f94fb, #a0f1ff);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Weather App Container */
+.weather-app {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 30px 20px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 120px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Heading */
+.weather-app h1 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+/* Input */
+#cityInput {
+  width: 80%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  text-align: center;
+  color: #333;
+}
+
+#cityInput:focus {
+  outline: none;
+}
+
+/* Button */
+button {
+  margin-top: 15px;
+  padding: 12px 30px;
+  font-size: 1rem;
+  background-color: #1abc9c;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #16a085;
+}
+
+/* Weather Info Display */
+.weather-info {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  background-color: rgba(127, 213, 253, 0.15);
+  padding: 20px;
+  border-radius: 10px;
+  color: #fff;
+  text-align: left;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .weather-app h1 {
+    font-size: 1.8rem;
+  }
+
+  #cityInput {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+
+  button {
+    font-size: 0.95rem;
+    padding: 10px 20px;
+  }
+
+  .menu li {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+}
