@@ -31,7 +31,7 @@ body {
 
 /* Heading */
 .weather-app h1 {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   margin-bottom: 20px;
 }
 
@@ -67,8 +67,13 @@ button:hover {
   background-color: #16a085;
 }
 
+button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
 /* Weather Info Display */
-.weather-info {
+.weather-info, .forecast-info {
   margin-top: 20px;
   font-size: 1.1rem;
   background-color: rgba(127, 213, 253, 0.15);
@@ -76,6 +81,12 @@ button:hover {
   border-radius: 10px;
   color: #fff;
   text-align: left;
+}
+
+/* Forecast Section */
+.forecast-info {
+  border-top: 2px solid rgba(255, 255, 255, 0.3);
+  padding-top: 15px;
 }
 
 /* Responsive */
@@ -92,10 +103,5 @@ button:hover {
   button {
     font-size: 0.95rem;
     padding: 10px 20px;
-  }
-
-  .menu li {
-    font-size: 13px;
-    padding: 8px 12px;
   }
 }
