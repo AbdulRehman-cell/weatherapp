@@ -1,0 +1,7 @@
+# Ignore the node_modules directory
+node_modules
+# Ignore the log files
+*.log
+# Ignore all other non-static files
+.git
+.DS_Store
