@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - Weather App</title>
+  <link rel="stylesheet" href="weatherapp.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="contact.html">Contact</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <div class="content contact-section">
+    <h1>Contact Us</h1>
+    <p class="lead">We're here to help! Reach out for weather info, feedback, or collaboration.</p>
+    <div class="contact-details">
+      <div class="contact-info">
+        <h3>Email</h3>
+        <p><a href="mailto:weatherapp@example.com" class="contact-link">weatherapp@example.com</a></p>
+        <h3>Phone</h3>
+        <p class="contact-link">+1 555-2368</p>
+        <h3>Location</h3>
+        <p class="contact-link">123 Weather Way, Cloud City, Earth</p>
+      </div>
+      <div class="social-media">
+        <h3>Connect with us</h3>
+        <div class="social-widgets">
+          <a href="https://facebook.com" target="_blank" class="social-widget" title="Facebook">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="#4a90e2">
+              <circle cx="12" cy="12" r="12" fill="#fff"/><path d="M14.17 8.33V6.97c0-.52.42-.95.95-.95h1.29V4.38H14.4c-1.76 0-3.18 1.42-3.18 3.18v.77H9v2.08h2.22v5.01h2.08v-5.01h1.42l.38-2.08h-1.8z" fill="#4a90e2"/>
+            </svg>
+          </a>
+          <a href="https://twitter.com" target="_blank" class="social-widget" title="Twitter">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="#4a90e2">
+              <circle cx="12" cy="12" r="12" fill="#fff"/><path d="M19.44 7.21c-.52.23-1.08.39-1.66.46a2.91 2.91 0 0 0 1.28-1.61c-.57.33-1.2.57-1.88.7a2.88 2.88 0 0 0-4.9 2.64c-2.39-.12-4.51-1.27-5.93-3.02a2.92 2.92 0 0 0-.39 1.45c0 .99.5 1.87 1.27 2.39-.45-.02-.87-.14-1.24-.34v.03c0 1.39.99 2.54 2.29 2.8-.24.07-.5.11-.77.11-.18 0-.37-.02-.54-.05.36 1.13 1.43 1.96 2.7 1.98A5.78 5.78 0 0 1 5 17.73a8.17 8.17 0 0 0 4.45 1.3c5.34 0 8.27-4.42 8.27-8.27 0-.13 0-.25-.01-.37a5.9 5.9 0 0 0 1.44-1.51z" fill="#4a90e2"/>
+            </svg>
+          </a>
+          <a href="https://instagram.com" target="_blank" class="social-widget" title="Instagram">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="#e94e77">
+              <circle cx="12" cy="12" r="12" fill="#fff"/><path d="M13.5 8.5c-1.1-.04-2.88-.04-4-.04s-2.9 0-4 .04C4.47 8.54 4 9.08 4 9.6v4.8c0 .52.47 1.06 1.5 1.1 1.1.04 2.88.04 4 .04s2.9 0 4-.04c1.03-.04 1.5-.58 1.5-1.1V9.6c0-.52-.47-1.06-1.5-1.1zm-1.5 6.1a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zm3.1-3.8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" fill="#e94e77"/>
+              <circle cx="12" cy="12" r="2.1" fill="none" stroke="#e94e77" stroke-width="1"/>
+            </svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" class="social-widget" title="LinkedIn">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="#4a90e2">
+              <circle cx="12" cy="12" r="12" fill="#fff"/><path d="M8.74 17.28V10.86H6.64v6.42h2.1zm-1.05-7.27a1.22 1.22 0 1 1 0-2.44 1.22 1.22 0 1 1 0 2.44zm8.16 7.27v-3.51c0-.82-.3-1.38-1.05-1.38-.62 0-.96.42-1.12.82-.06.14-.08.33-.08.52v3.54h-2.1v-4.44c0-.87-.02-1.61-.04-2.09h2.04c.02.43.04.87.04 1.33v.54h.02c.26-.41.7-.97 1.62-.97 1.38 0 1.92.91 1.92 2.26v3.33h-2.1z" fill="#4a90e2"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form-container">
+      <h2>Send us a message</h2>
+      <form class="contact-form">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required placeholder="John Doe">
+        </div>
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" required placeholder="john@example.com">
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required placeholder="Subject">
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required placeholder="How can we help you?"></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 Weather App. All Rights Reserved.</p>
+  </footer>
+
+  <script src="weatherapp.js"></script>
+</body>
+</html>
