@@ -5,9 +5,182 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Weather App</title>
   <link rel="stylesheet" href="weatherapp.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --background-color: #282c36;
+      --primary-color: #4a90e2;
+      --white: #ffffff;
+      --black-light: rgba(0, 0, 0, 0.7);
+      --text-color: var(--white);
+      --font-family: 'Poppins', sans-serif;
+    }
+    body {
+      /* Use a good background image for the home page */
+      background: linear-gradient(to bottom, rgba(40, 44, 54, 0.75), rgba(74, 144, 226, 0.25)), url('https://picsum.photos/800/500?random=2') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--text-color);
+      font-family: var(--font-family);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    header, footer {
+      background-color: var(--black-light);
+      padding: 20px;
+      text-align: center;
+      backdrop-filter: blur(4px);
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: var(--primary-color);
+    }
+    .weather-app {
+      text-align: center;
+      margin: 20px;
+      background: rgba(255,255,255,0.09);
+      border-radius: 16px;
+      padding: 2rem 1rem;
+      box-shadow: 0 8px 32px rgba(74,144,226, 0.18);
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      backdrop-filter: blur(2px);
+      animation: fadeIn 1s;
+    }
+    .articles {
+      margin: 20px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 16px;
+      padding: 2rem 1rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 4px 24px rgba(74,144,226, 0.10);
+      animation: fadeIn 1s;
+    }
+    article {
+      margin: 10px 0;
+    }
+    .forecast-info {
+      margin-top: 36px;
+      padding-top: 15px;
+      border-top: 2px solid rgba(255,255,255,0.23);
+    }
+    .forecast-horizontal {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.4rem;
+      justify-content: center;
+      align-items: stretch;
+      margin-top: 1.7rem;
+    }
+    .forecast-day-card {
+      background: rgba(127,213,253,0.17);
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(74,144,226,0.07);
+      color: var(--white);
+      padding: 1.3rem 0.9rem;
+      min-width: 160px;
+      flex: 1 1 170px;
+      max-width: 220px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: box-shadow 0.3s;
+    }
+    .forecast-day-card:hover {
+      box-shadow: 0 8px 30px rgba(74,144,226, 0.21);
+      background: rgba(127,213,253,0.21);
+    }
+    .forecast-day-card img {
+      width: 58px;
+      height: 58px;
+      margin-bottom: 0.6rem;
+    }
+    .forecast-day-card .date {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 0.45rem;
+    }
+    .forecast-day-card .desc {
+      font-size: 1.13rem;
+      margin-bottom: 0.25rem;
+      opacity: 0.93;
+    }
+    .forecast-day-card .temp {
+      font-weight: 400;
+      font-size: 1.06rem;
+      margin-bottom: 0.25rem;
+    }
+    footer p {
+      margin: 0;
+    }
+    @media (max-width: 900px) {
+      .weather-app, .articles {
+        max-width: 99vw;
+        padding: 1rem;
+      }
+      .forecast-horizontal {
+        gap: 0.8rem;
+      }
+      .forecast-day-card {
+        min-width: 120px;
+        max-width: 160px;
+        padding: 0.8rem 0.4rem;
+      }
+    }
+    @media (max-width: 700px) {
+      .forecast-horizontal {
+        flex-wrap: wrap;
+      }
+      .forecast-day-card {
+        min-width: 100px;
+        max-width: 120px;
+      }
+    }
+    @media (max-width: 500px) {
+      .weather-app, .articles {
+        padding: 0.3rem;
+        margin: 0.3rem auto;
+      }
+      .forecast-horizontal {
+        gap: 0.4rem;
+      }
+      .forecast-day-card {
+        min-width: 80px;
+        max-width: 100px;
+        font-size: 0.93rem;
+        padding: 0.5rem 0.2rem;
+      }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(24px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+  </style>
 </head>
 <body>
   
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="contact.html">Contact</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
   <div class="weather-app">
     <h1>Weather App</h1>
     <input type="text" id="cityInput" placeholder="Enter city name" />
@@ -17,8 +190,27 @@
     </div>
     <div class="forecast-info" id="forecastInfo">
       <!-- 5-day forecast will appear here -->
+      <div class="forecast-horizontal" id="forecastHorizontal">
+        <!-- Forecast cards injected by JS -->
+      </div>
     </div>
   </div>
+
+  <div class="articles" id="articles">
+    <h2>Articles</h2>
+    <article>
+      <h3>Understanding Weather Patterns</h3>
+      <p>Weather patterns are the trends observed in atmospheric conditions. This article covers various aspects...</p>
+    </article>
+    <article>
+      <h3>Climate Change Effects</h3>
+      <p>Climate change is affecting weather across the globe. In this article, we explore its impacts...</p>
+    </article>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 Weather App. All Rights Reserved.</p>
+  </footer>
 
   <script src="weatherapp.js"></script>
 </body>
